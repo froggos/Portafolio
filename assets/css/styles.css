@@ -1,0 +1,23 @@
+.suse-extreme {
+    font-family: "SUSE", sans-serif !important;
+    font-optical-sizing: auto !important;
+    font-weight: 800 !important;
+}
+
+.suse-bold {
+    font-family: "SUSE", sans-serif !important;
+    font-optical-sizing: auto !important;
+    font-weight: 500 !important;
+}
+
+.suse-bolder {
+    font-family: "SUSE", sans-serif !important;
+    font-optical-sizing: auto !important;
+    font-weight: 700 !important;
+}
+
+.suse-normal {
+    font-family: "SUSE", sans-serif !important;
+    font-optical-sizing: auto !important;
+    font-weight: 200 !important;
+}
