@@ -16,6 +16,12 @@
     font-weight: 700 !important;
 }
 
+.suse-bold-normal {
+    font-family: "SUSE", sans-serif !important;
+    font-optical-sizing: auto !important;
+    font-weight: 350 !important;
+}
+
 .suse-normal {
     font-family: "SUSE", sans-serif !important;
     font-optical-sizing: auto !important;
