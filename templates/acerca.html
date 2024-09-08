@@ -7,9 +7,453 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/styles.css">
     <title>Acerca de</title>
 </head>
 <body>
+    <div class="bg-[#08090e]">
+        {{template "navbar" .}}
+
+        <div class="w-full flex px-32 py-20">
+            <div class="bg-[#12131e] w-full flex flex-col py-10 px-24 rounded-xl shadow gap-4">
+                <h4 class="text-white suse-extreme text-2xl underline">Acerca de mi</h4>
+                <div class="w-full flex gap-2">
+                    <div class="flex flex-col h-full items-center gap-4 pt-2">
+                        <div class="w-2 h-2 bg-[#F38D2D] mb-2 rounded"></div>
+                    </div>
+                    <div class="w-full flex flex-col gap-4 items-center">
+                        <p class="text-white suse-normal">
+                            <strong class="suse-bolder text-[#F38D2D]">Mi nombre es Benjamin Osorio, soy Analista Programador egresado de Instituto Profesional Santo Tomas, Ovalle.</strong> 
+                            Nacido el 7 de marzo de 1998, actualmente resido en la comuna de Ovalle, Coquimbo, Chile. Llevo más de 3 años en el desarrollo de software
+                            enfocándome principalmente en el <strong class="suse-bolder">desarrollo web</strong>.
+                            
+                            <br>
+                            <br>
+
+                            Como desarrollador y profesional, encuentro mi fuerte en el desarrollo de backend, llegando
+                            a desarrollar múltiples servidores web que funcionan como APIs Rest, servidores de websockets, y de SSE (Server Sent Events), en distintas tecnologías,
+                            destacando principalmente <strong class="suse-bolder">Go</strong>, que es mi lenguaje de desarrollo web favorito. Además, me gusta mucho el desarrollo de aplicaciones es móviles, 
+                            es por esa razón que me adentro en el desarrollo de aplicaciones móviles y videojuegos, utilizando <strong class="suse-bolder">Flutter</strong>, <strong class="suse-bolder">Ionic</strong> y <strong class="suse-bolder">React Native</strong>, para el desarrollo de aplicaciones
+                            y <strong class="suse-bolder">Unity</strong> para el desarrollo de videojuegos.
     
+                            <br>
+                            <br>
+
+                            Además de programar, me dedico a la música, siendo integrante de 3 bandas, tocando diversos instrumentos y componiendo canciones de ska y math rock.
+                            <br>
+                            <br>
+                            Aquí una foto mía tocando el bajo en vivo:  
+                            <br>  
+                        </p>
+                        <img class="inline h-4/5 w-1/5 text-left rounded-xl shadow-md" src="./assets/img/bajo.png" alt="">
+                        <p class="text-white suse-normal">
+                            Llevo en la música alrededor de 18 años, tocando flauta y guitarra desde los 8 años y ampliándome después al bajo y trompeta, y el mundo de los sintetizadores 
+                            de software. Esto me llevó a querer estudiar Técnico en Sonido en el Instituto Profesional AIEP, Antofagasta, en el 2017, en donde sólo pude cursar 1 semestre debido a
+                            complicaciones de salud. Seguido de este evento, estuve 1 año trabajando sin estudios superiores, cuando se me presentó la oportunidad de estudiar Analista Programador
+                            en el Instituto Profesional Santo Tomás el 2018, en donde parte mi carrera como desarrollador de software.
+
+                            <br>
+                            <br>
+
+                            Después de 3 años, logro titularme como Analista Programador, y empiezo a trabajar inmediatamente en el Hospital Provincial de Ovalle. En este lugar, es donde
+                            desarrollaría la mayor parte de las habilidades que manejo actualmente, ya que la unidad de desarrollo de software era relativamente nueva, entonces tuvimos la oportunidad
+                            de probar distintos stacks hasta dar con uno que encajara perfecto con el equipo, el cual terminó siendo el stack MEAN (MongoDB, ExpressJS, Angular y NodeJS). Este stack se trabajó
+                            por la mayor parte de mi estadía en el hospital, haciendo uso también del lenguaje <strong class="suse-bolder">Go</strong> para el backend, <strong class="suse-bolder">Vue</strong>
+                             para ciertas aplicaciones de front, <strong class="suse-bolder">SQL SERVER, MySQL y PHP</strong> para dar soporte a las aplicaciones antiguas.
+
+                            <br>
+                            <br>
+
+                            Luego de mi paso por el Hospital, entro a trabajar a la empresa NexiA, en donde pude consolidar mis conocimientos en <strong class="suse-bolder">Angular</strong> y 
+                            <strong class="suse-bolder">NodeJS</strong>. Además, logro aprender a utilizar la herramienta <strong class="suse-bolder">Ionic</strong>, desarrollando diversas aplicaciones móviles
+                            y también empieza mi contacto con el mundo de <strong class="suse-bolder">AWS</strong>. Con <strong class="suse-bolder">AWS</strong>, llego a generar pipelines para el despliegue
+                            de las aplicaciones que desarrollaba.
+                        </p>
+                    </div>
+                </div>
+
+                <h4 class="text-white suse-extreme text-2xl mt-10 underline">Experiencia laboral</h4>
+
+                <div class="flex flex-col gap-10">
+                    <div class="flex gap-10">
+                        <div class="flex flex-col min-w-36">
+                            <h4 class="text-white suse-bold text-2xl mt-0 pt-0">NexiA</h4>
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="flex flex-col h-full justify-center items-center gap-4 pt-2">
+                                <div class="w-1 bg-[#F38D2D] h-full mb-2 rounded"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="flex flex-col gap-2">
+                                <h5 class="text-white suse-bold text-lg">Noviembre 2023 - Junio 2024</h5>
+                                <p class="text-white suse-normal">
+                                    Ingeniero en desarrollo, encargado de desarrollar aplicaciones web fullstack, aplicaciones móviles fullstack, modelo de datos, despliegue de aplicaciones y testing.
+                                    La empresa desarrolla aplicaciones de todo tipo, siendo esta una empresa prestadora de servicios de proyectos de software. Se utiliza el marco de trabajo SCRUM para gestionar
+                                    los proyectos de software, en donde existían las dailys y los sprints eran por lo general de 1 semana dependiendo del caso. Para el desarrollo del front se utilizaba Angular y Ionic,
+                                    para el backend se utilizaba NodeJS y AWS serverless. El equipo estaba conformado por unas 20 personas, en donde la mayoría de ellas eran desarrolladores de software, contando además con
+                                    un QA y un diseñador gráfico. Se realizaban reuniones diarias en donde cada uno de los integrantes del equipo comentaba el trabajo del día anterior, si es que existe algún impedimento,
+                                    y el trabajo que se realizará el día de hoy. Las reuniones con los clientes dependían del estado del trabajo y de la disponibilidad del mismo, aunque por lo general era 1 reunión a la semana. 
+                                    <br>
+                                </p>
+                                <div class="flex gap-2">
+                                    <div class="flex flex-col h-full items-center gap-4 pt-2">
+                                        <div class="w-2 h-2 bg-[#F38D2D] mb-2 rounded"></div>
+                                    </div>
+                                    <strong class="text-white suse-bolder tracking-wider">Herramientas: Angular, NodeJS, GitHub, Git, Jira, AWS, Slack, ExpressJS, MongoDB, MySQL</strong>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+
+                    <div class="flex gap-10">
+                        <div class="flex flex-col min-w-36">
+                            <h4 class="text-white suse-bold text-2xl mt-0 pt-0">Hospital Provincial de Ovalle</h4>
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="flex flex-col h-full justify-center items-center gap-4 pt-2">
+                                <div class="w-1 bg-[#F38D2D] h-full mb-2 rounded"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="flex flex-col gap-2">
+                                <h5 class="text-white suse-bold text-lg">Septiembre 2021 - Noviembre 2023</h5>
+                                <p class="text-white suse-normal">
+                                    Desarrollador de software, encargado de entregar soluciones de software para las distintas áreas del hospital. Este quiere decir, desarrollo de aplicaciones
+                                    que contribuyan al mejor funcionamiento y administración, tanto para la parte administrativa, como el área de salud. Esto requería del desarrollo del frontend y el backend,
+                                    además del desarrollo del modelo de datos que soporte a la aplicación. El equipo estaba conformado por 4 desarrolladores, 1 DevOps e ingeniero en redes, y 1 jefe de unidad de desarrollo.
+                                    Como metodología de trabajo se utilizaba una especie de fusión entre Kanban y Scrum, en donde el jefe de la unidad se encargaba de obtener los requerimientos de software de los distintos clientes,
+                                    analizarlos, y guíar al cliente para obtener la mejor solución.
+                                    Estos requerimientos eran registrados y dentro del tablero Kanban, en donde nos disponíamos cada uno de los integrantes en ir sacando táreas lo más rápido posible.
+                                    <br>
+                                    <br>
+                                    Además del desarrollo de software, cuando era necesario debía realizar mantenimiento técnico a los dispositivos informáticos que fallaban.
+
+                                    <br>
+                                    <br>
+                                    Dentro de esta empresa destaco los proyectos, <strong class="suse-bolder">Fenix</strong>, una aplicación para el retiro de medicamentes desde una máquina <strong class="suse-bolder">Kardex</strong>. También,
+                                    el desarrollo de la aplicación <strong class="suse-bolder">Gestión documental</strong> integrada con <strong class="suse-bolder">FirmaGob</strong>, utilizada para generar firmas digitales para el director del hospital.
+                                    Además, el <strong class="suse-bolder">Repositorio y API de pacientes</strong>, sistema que funciona como repositorio de todos los pacientes que se consultan en el hospital.
+
+                                </p>
+                                <div class="flex gap-2">
+                                    <div class="flex flex-col h-full items-center gap-4 pt-2">
+                                        <div class="w-2 h-2 bg-[#F38D2D] mb-2 rounded"></div>
+                                    </div>
+                                    <strong class="text-white suse-bolder tracking-wider">Herramientas: Angular, NodeJS, Jenkins, Gitlab, Git, ExpressJS, MongoDB, MySQL, SQL Server, PHP, Vue</strong>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="text-white suse-extreme text-2xl mt-10 underline">Habilidades</h4>
+
+                <div class="flex flex-col gap-10">
+                    <div class="flex flex-wrap gap-6">
+                        <div class="flex flex-col items-center bg-[#1b1d2e] h-80 w-64 text-white p-6 rounded-lg gap-6 border-8" style="border-color:#272a42;">
+                            <div class="flex-none">
+                                <h4 class="text-white suse-extreme text-xl mt-0 pt-0">
+                                    Go
+                                </h4>
+                            </div>
+                            <div class="flex-grow flex items-center justify-center">
+                                <img class="object-cover h-10" src="./assets/img/go.svg" alt="go">
+                            </div>
+
+                            <div class="flex-none mt-auto">
+                                <p class="suse-normal">Desarrollo de aplicaciones web, API Rest, websockets y SSE. Lenguaje de programación favorito.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center bg-[#1b1d2e] h-80 w-64 text-white p-6 rounded-lg gap-6 border-8" style="border-color:#272a42;">
+                            <div class="flex-none">
+                                <h4 class="text-white suse-extreme text-xl mt-0 pt-0">
+                                    TypeScript
+                                </h4>
+                            </div>
+                            <div class="flex-grow flex items-center justify-center">
+                                <img class="object-cover h-10" src="./assets/img/typescript.svg" alt="typescript">
+                            </div>
+
+                            <div class="flex-none mt-auto">
+                                <p class="suse-normal">Segundo lenguaje de programación que más utilizo.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center bg-[#1b1d2e] h-80 w-64 text-white p-6 rounded-lg gap-6 border-8" style="border-color:#272a42;">
+                            <div class="flex-none">
+                                <h4 class="text-white suse-extreme text-xl mt-0 pt-0">
+                                    Dart
+                                </h4>
+                            </div>
+                            <div class="flex-grow flex items-center justify-center">
+                                <img class="object-cover h-10" src="./assets/img/dart.svg" alt="dart">
+                            </div>
+
+                            <div class="flex-none mt-auto">
+                                <p class="suse-normal">Desarrollo de aplicaciones móviles y de escritorio.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center bg-[#1b1d2e] h-80 w-64 text-white p-6 rounded-lg gap-6 border-8" style="border-color:#272a42;">
+                            <div class="flex-none">
+                                <h4 class="text-white suse-extreme text-xl mt-0 pt-0">
+                                    PHP
+                                </h4>
+                            </div>
+                            <div class="flex-grow flex items-center justify-center">
+                                <img class="object-cover h-10" src="./assets/img/php.png" alt="php">
+                            </div>
+
+                            <div class="flex-none mt-auto">
+                                <p class="suse-normal">Desarrollo de aplicaciones web monólito y API.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center bg-[#1b1d2e] h-80 w-64 text-white p-6 rounded-lg gap-6 border-8" style="border-color:#272a42;">
+                            <div class="flex-none">
+                                <h4 class="text-white suse-extreme text-xl mt-0 pt-0">
+                                    Java
+                                </h4>
+                            </div>
+                            <div class="flex-grow flex items-center justify-center">
+                                <img class="object-cover h-10" src="./assets/img/java.svg" alt="java">
+                            </div>
+
+                            <div class="flex-none mt-auto">
+                                <p class="suse-normal">Desarrollo de aplicaciones de escritorio y web.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center bg-[#1b1d2e] h-80 w-64 text-white p-6 rounded-lg gap-6 border-8" style="border-color:#272a42;">
+                            <div class="flex-none">
+                                <h4 class="text-white suse-extreme text-xl mt-0 pt-0">
+                                    JavaScript
+                                </h4>
+                            </div>
+                            <div class="flex-grow flex items-center justify-center">
+                                <img class="object-cover h-10" src="./assets/img/javascript.svg" alt="javascript">
+                            </div>
+
+                            <div class="flex-none mt-auto">
+                                <p class="suse-normal">Desarrollo de aplicaciones web utilizando distintos frameworks.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center bg-[#1b1d2e] h-80 w-64 text-white p-6 rounded-lg gap-6 border-8" style="border-color:#272a42;">
+                            <div class="flex-none">
+                                <h4 class="text-white suse-extreme text-xl mt-0 pt-0">
+                                    C
+                                </h4>
+                            </div>
+                            <div class="flex-grow flex items-center justify-center">
+                                <img class="object-cover h-10" src="./assets/img/c.svg" alt="c">
+                            </div>
+
+                            <div class="flex-none mt-auto">
+                                <p class="suse-normal">Desarrollo de diversas aplicaciones, principalmente utilizado para modificar videojuegos.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center bg-[#1b1d2e] h-80 w-64 text-white p-6 rounded-lg gap-6 border-8" style="border-color:#272a42;">
+                            <div class="flex-none">
+                                <h4 class="text-white suse-extreme text-xl mt-0 pt-0">
+                                    C#
+                                </h4>
+                            </div>
+                            <div class="flex-grow flex items-center justify-center">
+                                <img class="object-cover h-10" src="./assets/img/csharp.svg" alt="csharp">
+                            </div>
+
+                            <div class="flex-none mt-auto">
+                                <p class="suse-normal">Desarrollo aplicaciones de escritorio y web. Desarrollo de videojuegos con Unity.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center bg-[#1b1d2e] h-80 w-64 text-white p-6 rounded-lg gap-6 border-8" style="border-color:#272a42;">
+                            <div class="flex-none">
+                                <h4 class="text-white suse-extreme text-xl mt-0 pt-0">
+                                    Angular
+                                </h4>
+                            </div>
+                            <div class="flex-grow flex items-center justify-center">
+                                <img class="object-cover h-10" src="./assets/img/angular.png" alt="angular">
+                            </div>
+
+                            <div class="flex-none mt-auto">
+                                <p class="suse-normal">Framework de JavaScript favorito y el que más utilizo.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center bg-[#1b1d2e] h-80 w-64 text-white p-6 rounded-lg gap-6 border-8" style="border-color:#272a42;">
+                            <div class="flex-none">
+                                <h4 class="text-white suse-extreme text-xl mt-0 pt-0">
+                                    Flutter
+                                </h4>
+                            </div>
+                            <div class="flex-grow flex items-center justify-center">
+                                <img class="object-cover h-10" src="./assets/img/flutter.svg" alt="flutter">
+                            </div>
+
+                            <div class="flex-none mt-auto">
+                                <p class="suse-normal">Desarrollo de aplicaciones móviles.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center bg-[#1b1d2e] h-80 w-64 text-white p-6 rounded-lg gap-6 border-8" style="border-color:#272a42;">
+                            <div class="flex-none">
+                                <h4 class="text-white suse-extreme text-xl mt-0 pt-0">
+                                    Android Studio
+                                </h4>
+                            </div>
+                            <div class="flex-grow flex items-center justify-center">
+                                <img class="object-cover h-10" src="./assets/img/android.svg" alt="android">
+                            </div>
+
+                            <div class="flex-none mt-auto">
+                                <p class="suse-normal">Desarrollo de aplicaciones móviles.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center bg-[#1b1d2e] h-80 w-64 text-white p-6 rounded-lg gap-6 border-8" style="border-color:#272a42;">
+                            <div class="flex-none">
+                                <h4 class="text-white suse-extreme text-xl mt-0 pt-0">
+                                    NodeJS
+                                </h4>
+                            </div>
+                            <div class="flex-grow flex items-center justify-center">
+                                <img class="object-cover h-10" src="./assets/img/node.svg" alt="node">
+                            </div>
+
+                            <div class="flex-none mt-auto">
+                                <p class="suse-normal">Desarrollo de aplicaciones diversas aplicaciones, principalmente web.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center bg-[#1b1d2e] h-80 w-64 text-white p-6 rounded-lg gap-6 border-8" style="border-color:#272a42;">
+                            <div class="flex-none">
+                                <h4 class="text-white suse-extreme text-xl mt-0 pt-0">
+                                    MongoDB
+                                </h4>
+                            </div>
+                            <div class="flex-grow flex items-center justify-center">
+                                <img class="object-cover h-10" src="./assets/img/mongo.svg" alt="mongo">
+                            </div>
+
+                            <div class="flex-none mt-auto">
+                                <p class="suse-normal">Desarrollo de modelo de datos no relacional. Base de datos favorita.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center bg-[#1b1d2e] h-80 w-64 text-white p-6 rounded-lg gap-6 border-8" style="border-color:#272a42;">
+                            <div class="flex-none">
+                                <h4 class="text-white suse-extreme text-xl mt-0 pt-0">
+                                    SQL Server
+                                </h4>
+                            </div>
+                            <div class="flex-grow flex items-center justify-center">
+                                <img class="object-cover h-10" src="./assets/img/sqlserver.svg" alt="sqlserver">
+                            </div>
+
+                            <div class="flex-none mt-auto">
+                                <p class="suse-normal">Principal motor de SQL.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center bg-[#1b1d2e] h-80 w-64 text-white p-6 rounded-lg gap-6 border-8" style="border-color:#272a42;">
+                            <div class="flex-none">
+                                <h4 class="text-white suse-extreme text-xl mt-0 pt-0">
+                                    MySQL
+                                </h4>
+                            </div>
+                            <div class="flex-grow flex items-center justify-center">
+                                <img class="object-cover h-10" src="./assets/img/mysql.svg" alt="mysql">
+                            </div>
+
+                            <div class="flex-none mt-auto">
+                                <p class="suse-normal">Segundo motor de SQL.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center bg-[#1b1d2e] h-80 w-64 text-white p-6 rounded-lg gap-6 border-8" style="border-color:#272a42;">
+                            <div class="flex-none">
+                                <h4 class="text-white suse-extreme text-xl mt-0 pt-0">
+                                    Spring
+                                </h4>
+                            </div>
+                            <div class="flex-grow flex items-center justify-center">
+                                <img class="object-cover h-10" src="./assets/img/spring.svg" alt="spring">
+                            </div>
+
+                            <div class="flex-none mt-auto">
+                                <p class="suse-normal">Desarrollo de aplicaciones web.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center bg-[#1b1d2e] h-80 w-64 text-white p-6 rounded-lg gap-6 border-8" style="border-color:#272a42;">
+                            <div class="flex-none">
+                                <h4 class="text-white suse-extreme text-xl mt-0 pt-0">
+                                    Ionic
+                                </h4>
+                            </div>
+                            <div class="flex-grow flex items-center justify-center">
+                                <img class="object-cover h-10" src="./assets/img/ionic.svg" alt="ionic">
+                            </div>
+
+                            <div class="flex-none mt-auto">
+                                <p class="suse-normal">Desarrollo de aplicaciones móviles.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center bg-[#1b1d2e] h-80 w-64 text-white p-6 rounded-lg gap-6 border-8" style="border-color:#272a42;">
+                            <div class="flex-none">
+                                <h4 class="text-white suse-extreme text-xl mt-0 pt-0">
+                                    Vue
+                                </h4>
+                            </div>
+                            <div class="flex-grow flex items-center justify-center">
+                                <img class="object-cover h-10" src="./assets/img/vue.svg" alt="vue">
+                            </div>
+
+                            <div class="flex-none mt-auto">
+                                <p class="suse-normal">Segundo framework de JavaScript favorito.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center bg-[#1b1d2e] h-80 w-64 text-white p-6 rounded-lg gap-6 border-8" style="border-color:#272a42;">
+                            <div class="flex-none">
+                                <h4 class="text-white suse-extreme text-xl mt-0 pt-0">
+                                    Git
+                                </h4>
+                            </div>
+                            <div class="flex-grow flex items-center justify-center">
+                                <img class="object-cover h-10" src="./assets/img/git.svg" alt="git">
+                            </div>
+
+                            <div class="flex-none mt-auto">
+                                <p class="suse-normal">Herramienta para gestión de versiones de software que más utilizo.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center bg-[#1b1d2e] h-80 w-64 text-white p-6 rounded-lg gap-6 border-8" style="border-color:#272a42;">
+                            <div class="flex-none">
+                                <h4 class="text-white suse-extreme text-xl mt-0 pt-0">
+                                    Laravel
+                                </h4>
+                            </div>
+                            <div class="flex-grow flex items-center justify-center">
+                                <img class="object-cover h-10" src="./assets/img/laravel.svg" alt="laravel">
+                            </div>
+
+                            <div class="flex-none mt-auto">
+                                <p class="suse-normal">Framework que manejo pero no domino.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

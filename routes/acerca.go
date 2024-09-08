@@ -1,20 +1,19 @@
 package routes
 
 import (
-	"log"
+	"fmt"
 	"net/http"
-	"text/template"
+
+	"portafolio/structs"
 )
 
-func DevolverAcercaDe(w http.ResponseWriter, r *http.Request) error {
-	tmpl, err := template.ParseFiles("./templates/acerca.html")
+func DevolverAcercaDe(w http.ResponseWriter, r *http.Request, templateRenderer *structs.Templates) error {
+
+	err := templateRenderer.Renderizar(w, "acerca.html", nil)
 
 	if err != nil {
-		log.Fatalf("No se pudo inicializar el template> %v", err)
-		return err
+		return fmt.Errorf("error al renderizar la plantilla: %w", err)
 	}
-
-	tmpl.Execute(w, nil)
 
 	return nil
 }

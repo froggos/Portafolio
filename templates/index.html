@@ -18,34 +18,7 @@
         AOS.init();
     </script>
     <div class="bg-[#08090e]">
-        <nav class="bg-[#08090e] border-gray-200 dark:bg-gray-900">
-            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <span class="self-center text-white text-2xl font-bold whitespace-nowrap suse">LOGO</span>
-                <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-                    <span class="sr-only">Abrir</span>
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-                    </svg>
-                </button>
-                <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-                    <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
-                        <li class="hover:bg-[#12131e] py-1 px-3 rounded">
-                            <a href="#" class="block px-2 px-3 text-white rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-blue-500 suse-bold">Inicio</a>
-                        </li>
-                        <li class="hover:bg-[#12131e] py-1 px-3 rounded">
-                            <a href="acerca-de" class="block py-2 px-3 text-white md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent suse-bold">Acerca de</a>
-                        </li>
-                        <li class="hover:bg-[#12131e] py-1 px-3 rounded">
-                            <a href="#" class="block py-2 px-3 text-white md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent suse-bold">Servicios</a>
-                        </li>
-                        <li class="hover:bg-[#12131e] py-1 px-3 rounded">
-                            <a href="#" class="block py-2 px-3 text-white md:hover:bg-transparent md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent suse-bold">Contacto</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class=""></div>
-            </div>
-        </nav>
+        {{template "navbar" .}}
 
         <div class="w-full h-screen flex items-center p-32" data-aos="fade-down-right" data-aos-delay="100">
             <fieldset class="p-4 inline-block" style="border: 3px solid transparent; border-color: #F38D2D !important; border-radius: 6px;">
@@ -67,10 +40,13 @@
 
         <div class="w-full flex items-center bg-[#12131e] p-32">
             <div class="bg-[#12131e] flex flex-col gap-10">
-                <h1 data-aos="fade-left" data-aos-delay="80" class="text-white suse-extreme text-6xl hover:underline">
-                    <a href="#">
+                <h1 data-aos="fade-left" data-aos-delay="80" class="relative group text-white suse-extreme text-6xl hover:underline max-w-max">
+                    <a class="relative" href="#">
                         Acerca de mi
                     </a>
+                    <div class="absolute top-1/2 left-full ml-2 -translate-y-1/2 mt-2 rounded p-2 bg-[#08090e] hidden group-hover:flex suse-bold-normal text-sm">
+                        Saber más
+                    </div>
                 </h1>
                 <div data-aos="fade-right" data-aos-delay="100" class="flex space-x-5">
                     <div class="flex flex-col">
@@ -78,9 +54,11 @@
                     </div>
                     <p class="text-white suse-bold-normal text-xl">
                         <span>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis finibus tincidunt odio a tempus. Aenean sagittis ante sit amet ex facilisis pretium. Ut sit amet turpis sed ligula vulputate commodo nec nec quam. Nullam in tempus nunc. Nulla suscipit lacus at est efficitur facilisis vel quis enim. Donec varius lacinia lorem, at venenatis lacus malesuada ut. Quisque et sapien finibus, gravida eros ut, pharetra velit.
-
-Sed nulla felis, convallis vulputate nisl vitae, tristique scelerisque orci. Duis vel lacus lorem. Maecenas fermentum purus eget dolor tempor bibendum. Praesent in erat placerat, tristique erat ut, laoreet mauris. Cras pretium ultricies arcu id blandit. Donec in consequat sem. Nunc tincidunt sem ac lobortis mattis. Phasellus non suscipit ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus pellentesque nibh ut lectus eleifend dictum. Curabitur sapien magna, volutpat eu ligula ac, commodo aliquet metus. Etiam feugiat massa in pharetra sodales.</span>
+                            Soy desarrollador de software desde hace más de 3 años, principalmente web. He trabajado con diversos lenguajes de programación y herramientas
+                            para el desarrollo de aplicaciones más eficiente posible. Entre ellas destaco Go, Angular, NodeJS y AWS. Me gusta mucho la programación en general,
+                            es por esa misma razón que me voy motivado a aprender distintas herramientas para poder ser un programador completo, que pueda llegar a realizar
+                            cualquier trabajo solicitado.
+                        </span>
                     </p>
                 </div>
                 <div class="flex items-center mt-16" data-aos="fade-left" data-aos-delay="60">
