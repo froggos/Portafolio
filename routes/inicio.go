@@ -6,13 +6,31 @@ import (
 	"portafolio/structs"
 )
 
-func DevolverInicio(w http.ResponseWriter, r *http.Request, templateRenderer *structs.Templates) error {
+func GetHome(w http.ResponseWriter, r *http.Request, templateRenderer *structs.Templates) error {
 
-	err := templateRenderer.Renderizar(w, "index.html", nil)
+	err := templateRenderer.Render(w, "index.html", nil)
 
 	if err != nil {
 		return fmt.Errorf("error al renderizar la plantilla: %w", err)
 	}
+
+	return nil
+}
+
+func RedirectAboutAbilities(w http.ResponseWriter, r *http.Request, templateRenderer *structs.Templates) error {
+	http.Redirect(w, r, "/acerca-de#habilidades-container", http.StatusSeeOther)
+
+	return nil
+}
+
+func RedirectAboutMe(w http.ResponseWriter, r *http.Request, templateRenderer *structs.Templates) error {
+	http.Redirect(w, r, "/acerca-de#yo-container", http.StatusSeeOther)
+
+	return nil
+}
+
+func RedirectAboutExperience(w http.ResponseWriter, r *http.Request, templateRenderer *structs.Templates) error {
+	http.Redirect(w, r, "/acerca-de#experiencia-container", http.StatusSeeOther)
 
 	return nil
 }

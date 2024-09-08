@@ -49,7 +49,7 @@ func main() {
 
 	mux.Use(logger)
 
-	templateRender := structs.NuevoTemplate()
+	templateRender := structs.NewTemplate()
 
 	if templateRender == nil {
 		log.Fatalf("")
@@ -59,9 +59,14 @@ func main() {
 
 	mux.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))))
 
-	// Rutas
-	mux.HandleFunc("/", handleWithTemplates(routes.DevolverInicio)).Methods("GET")
-	mux.HandleFunc("/acerca-de", handleWithTemplates(routes.DevolverAcercaDe)).Methods("GET")
+	// rutas
+	mux.HandleFunc("/", handleWithTemplates(routes.GetHome)).Methods("GET")
+	mux.HandleFunc("/acerca-de", handleWithTemplates(routes.GetAbout)).Methods("GET")
+
+	// metodos
+	mux.HandleFunc("/acerca-de-habilidades", handleWithTemplates(routes.RedirectAboutAbilities)).Methods("GET")
+	mux.HandleFunc("/acerca-de-mi", handleWithTemplates(routes.RedirectAboutMe)).Methods("GET")
+	mux.HandleFunc("/acerca-de-experiencia", handleWithTemplates(routes.RedirectAboutExperience)).Methods("GET")
 
 	http.ListenAndServe(":8080", mux)
 }
