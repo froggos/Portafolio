@@ -4,6 +4,9 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
+	"os"
+	"path/filepath"
+	"strings"
 
 	"portafolio/routes"
 	"portafolio/structs"
@@ -17,14 +20,14 @@ type ErrorAPI struct {
 	StateCode int
 }
 
-func logger(siguiente http.Handler) http.Handler {
+func logger(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		log.Println(r.RequestURI)
-		siguiente.ServeHTTP(w, r)
+		next.ServeHTTP(w, r)
 	})
 }
 
-func escribirJSON(w http.ResponseWriter, status int, v any) error {
+func writeJSON(w http.ResponseWriter, status int, v any) error {
 	w.Header().Add("Content-Type", "application/json")
 	w.WriteHeader(status)
 	return json.NewEncoder(w).Encode(v)
@@ -34,7 +37,7 @@ func returnFuncHandleHTTP(t *structs.Templates) func(func(http.ResponseWriter, *
 	return func(f func(http.ResponseWriter, *http.Request, *structs.Templates) error) http.HandlerFunc {
 		return func(w http.ResponseWriter, r *http.Request) {
 			if err := f(w, r, t); err != nil {
-				escribirJSON(w, http.StatusBadRequest, &ErrorAPI{
+				writeJSON(w, http.StatusBadRequest, &ErrorAPI{
 					Error:     err.Error(),
 					ErrorCode: "ERR_BAD_REQUEST",
 					StateCode: http.StatusBadRequest,
@@ -44,7 +47,35 @@ func returnFuncHandleHTTP(t *structs.Templates) func(func(http.ResponseWriter, *
 	}
 }
 
+func isSVG(fileName string) bool {
+	ext := filepath.Ext(fileName)
+	return strings.ToLower(ext) == ".svg"
+}
+
+func analyzeFile(directory string) error {
+	files, err := os.ReadDir(directory)
+
+	if err != nil {
+		return err
+	}
+
+	for _, file := range files {
+		if !isSVG(file.Name()) {
+			if file.IsDir() {
+				log.Printf("el archivo %s es una carpeta", file.Name())
+				continue
+			}
+
+			log.Printf("advertencia: el archivo %s no es un SVG", file.Name())
+		}
+	}
+
+	return nil
+}
+
 func main() {
+	analyzeFile("./assets/img")
+
 	mux := mux.NewRouter()
 
 	mux.Use(logger)
@@ -52,7 +83,7 @@ func main() {
 	templateRender := structs.NewTemplate()
 
 	if templateRender == nil {
-		log.Fatalf("")
+		log.Fatalf("no existe render")
 	}
 
 	handleWithTemplates := returnFuncHandleHTTP(templateRender)
