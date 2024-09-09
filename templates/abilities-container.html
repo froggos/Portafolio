@@ -1,0 +1,20 @@
+{{define "abilities"}}
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+    {{range .}}
+    <div class="flex flex-col items-center bg-[#1b1d2e] h-80 w-full text-white p-6 rounded-lg gap-6 border-8" style="border-color:#272a42;">
+        <div class="flex-none">
+            <h4 class="text-white suse-extreme text-xl mt-0 pt-0">
+                {{.Name}}
+            </h4>
+        </div>
+        <div class="flex-grow flex items-center justify-center">
+            <img class="object-cover h-10" src="{{.ImageURL}}" alt="go">
+        </div>
+
+        <div class="flex-none mt-auto">
+            <p class="suse-normal">{{.Description}}</p>
+        </div>
+    </div>
+    {{end}}
+</div>
+{{end}}

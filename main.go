@@ -74,7 +74,7 @@ func analyzeFile(directory string) error {
 }
 
 func main() {
-	analyzeFile("./assets/img")
+	analyzeFile("./assets/img/logos")
 
 	mux := mux.NewRouter()
 
@@ -98,6 +98,8 @@ func main() {
 	mux.HandleFunc("/acerca-de-habilidades", handleWithTemplates(routes.RedirectAboutAbilities)).Methods("GET")
 	mux.HandleFunc("/acerca-de-mi", handleWithTemplates(routes.RedirectAboutMe)).Methods("GET")
 	mux.HandleFunc("/acerca-de-experiencia", handleWithTemplates(routes.RedirectAboutExperience)).Methods("GET")
+
+	log.Printf("servidor levantado en el puerto: %d", 8080)
 
 	http.ListenAndServe(":8080", mux)
 }
