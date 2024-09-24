@@ -55,6 +55,11 @@ func GetAbout(w http.ResponseWriter, r *http.Request, templateRenderer *structs.
 			Description: "Framework de JavaScript favorito y el que más utilizo.",
 		},
 		{
+			Name:        "JQuery",
+			ImageURL:    "./assets/img/logos/jquery.svg",
+			Description: "Librería que utilicé bastante en un principio para el desarrollo frontend.",
+		},
+		{
 			Name:        "Flutter",
 			ImageURL:    "./assets/img/logos/flutter.svg",
 			Description: "A la hora de desarrollar aplicaciones móviles es lo que más utilizo.",
@@ -103,6 +108,16 @@ func GetAbout(w http.ResponseWriter, r *http.Request, templateRenderer *structs.
 			Name:        "Git",
 			ImageURL:    "./assets/img/logos/git.svg",
 			Description: "Herramienta para gestión de versiones de software que más utilizo.",
+		},
+		{
+			Name:        "AWS",
+			ImageURL:    "./assets/img/logos/aws.svg",
+			Description: "Conocimiento moderado de los servicios que entrega AWS, principalmente utilizado para generar pipelines de despliegue.",
+		},
+		{
+			Name:        "Google Cloud",
+			ImageURL:    "./assets/img/logos/gcp.svg",
+			Description: "Utilizado para levantar servidores diversos.",
 		},
 		{
 			Name:        "Laravel",
