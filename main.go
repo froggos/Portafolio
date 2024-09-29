@@ -101,5 +101,5 @@ func main() {
 
 	log.Printf("servidor levantado en el puerto: %d", 80)
 
-	log.Fatal(http.ListenAndServe("0.0.0.0:80", mux))
+	log.Fatal(http.ListenAndServe("0.0.0.0:8080", mux))
 }
