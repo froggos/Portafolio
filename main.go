@@ -99,7 +99,7 @@ func main() {
 	mux.HandleFunc("/acerca-de-mi", handleWithTemplates(routes.RedirectAboutMe)).Methods("GET")
 	mux.HandleFunc("/acerca-de-experiencia", handleWithTemplates(routes.RedirectAboutExperience)).Methods("GET")
 
-	log.Printf("servidor levantado en el puerto: %d", 8080)
+	log.Printf("servidor levantado en el puerto: %d", 80)
 
-	http.ListenAndServe("0.0.0.0:80", mux)
+	log.Fatal(http.ListenAndServe("0.0.0.0:80", mux))
 }
