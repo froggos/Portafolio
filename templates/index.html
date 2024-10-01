@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/assets/js/htmx.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/assets/js/htmx.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
@@ -17,30 +17,33 @@
     <script>
         AOS.init();
     </script>
-    <div class="bg-[#08090e]">
+    <div class="bg-[#08090e] w-full">
         {{template "navbar" .}}
 
-        <div class="w-full h-screen flex items-center p-32" data-aos="fade-down-right" data-aos-delay="100">
+        <div class="h-screen flex flex-col md:flex-row items-center justify-center md:p-24 lg:p-32 gap-10" data-aos="fade-down-right" data-aos-delay="100">
             <fieldset class="p-4 inline-block" style="border: 3px solid transparent; border-color: #F38D2D !important; border-radius: 6px;">
                 <legend class="p-2">
-                    <strong class="text-[#F38D2D] text-6xl suse-extreme">Benjamin Osorio</strong>
+                    <strong class="text-[#F38D2D] text-3xl md:text-6xl suse-extreme">Benjamin Osorio</strong>
                 </legend>
                 <div class="flex flex-col">
                     <p class="tracking-wider">
-                        <span class="text-white suse-bold text-xl">Analista programador</span>
+                        <span class="text-white suse-bold text-lg md:text-xl">Analista programador</span>
                         <br>
-                        <span class="text-white suse-bold text-xl">Desarrollador de software web y movil</span>
+                        <span class="text-white suse-bold text-lg md:text-xl">Desarrollador de software web y movil</span>
                         <br>
-                        <span class="text-white suse-bold text-xl">Soporte tecnico</span>
+                        <span class="text-white suse-bold text-lg md:text-xl">Soporte tecnico</span>
                     </p>
                     <!-- <button class="text-[#F38D2D] font-bold py-2 px-4 rounded border-2 border-[#F38D2D] w-1/6 tracking-wide mt-6">Contactame</button> -->
                 </div>
             </fieldset>
+            <div class="h-20 w-20 md:h-80 md:w-80">
+                <!-- <img src="./assets/img/bajo.png" alt="">  -->
+            </div>
         </div>
 
-        <div class="w-full flex items-center bg-[#12131e] p-32">
+        <div class="w-full flex items-center bg-[#12131e] p-6 md:p-20 lg:p-32">
             <div class="bg-[#12131e] flex flex-col gap-10">
-                <h1 data-aos="fade-left" data-aos-delay="80" class="relative group text-white suse-extreme text-6xl hover:underline max-w-max">
+                <h1 data-aos="fade-left" data-aos-delay="80" class="relative group text-white suse-extreme text-3xl md:text-6xl hover:underline max-w-max">
                     <a class="relative" href="/acerca-de-mi">
                         Acerca de mi
                     </a>
@@ -53,7 +56,7 @@
                     <div class="flex flex-col">
                         <div class="w-4 bg-[#F38D2D] h-4 rounded-full"></div>
                     </div>
-                    <p class="text-white suse-bold-normal text-xl">
+                    <p class="text-white suse-bold-normal text-lg md:text-xl">
                         <span>
                             Soy desarrollador de software desde hace más de 3 años, principalmente web. He trabajado con diversos lenguajes de programación y herramientas
                             para el desarrollo de aplicaciones más eficiente posible. Entre ellas destaco Go, Angular, NodeJS y AWS. Me gusta mucho la programación en general,
@@ -64,7 +67,7 @@
                 </div>
 
                 <div class="flex items-center mt-16" data-aos="fade-left" data-aos-delay="60">
-                    <h1 class="relative group text-white suse-extreme text-6xl hover:underline max-w-max">
+                    <h1 class="relative group text-white suse-extreme text-3xl md:text-6xl hover:underline max-w-max">
                         <a class="relative" href="/acerca-de-habilidades">
                             Mis habilidades
                         </a>
@@ -79,54 +82,60 @@
                         <div class="w-4 bg-[#F38D2D] h-4 rounded-full"></div>
                     </div>
                     <p class="text-white suse-bold-normal text-xl">
-                        <span class="text-white suse-bold text-2xl">Lenguajes de programacion</span>
+                        <span class="text-white suse-bold text-xl md:text-2xl">Lenguajes de programacion</span>
                     </p>
                 </div>
 
-                <div class="flex flex-wrap gap-12">
-                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex justify-between items-center bg-[#1b1d2e] hover:shadow-2xl h-48 w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
+                <div class="flex flex-wrap gap-8 md:gap-12">
+                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex justify-between items-center bg-[#1b1d2e] hover:shadow-2xl h-24 w-24 md:h-48 md:w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
                         <img class="object-cover" src="./assets/img/logos/go.svg" alt="go">
 
                         <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 rounded p-2 bg-[#08090e] hidden group-hover:flex suse-bold-normal">
                             Go
                         </div>
                     </div>
-                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex justify-between items-center bg-[#1b1d2e] hover:shadow-2xl h-48 w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
+
+                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex justify-between items-center bg-[#1b1d2e] hover:shadow-2xl h-24 w-24 md:h-48 md:w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
                         <img class="object-cover" src="./assets/img/logos/dart.svg" alt="dart">
                         
                         <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 rounded p-2 bg-[#08090e] hidden group-hover:flex suse-bold-normal">
                             Dart
                         </div>
                     </div>
-                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex justify-between items-center bg-[#1b1d2e] hover:shadow-2xl h-48 w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
+
+                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex justify-between items-center bg-[#1b1d2e] hover:shadow-2xl h-24 w-24 md:h-48 md:w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
                         <img class="object-cover" src="./assets/img/logos/php.svg" alt="php">
 
                         <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 rounded p-2 bg-[#08090e] hidden group-hover:flex suse-bold-normal">
                             PHP
                         </div>
                     </div>
-                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex justify-between items-center bg-[#1b1d2e] hover:shadow-2xl h-48 w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
+
+                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex justify-between items-center bg-[#1b1d2e] hover:shadow-2xl h-24 w-24 md:h-48 md:w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
                         <img class="object-cover" src="./assets/img/logos/java.svg" alt="java">
 
                         <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 rounded p-2 bg-[#08090e] hidden group-hover:flex suse-bold-normal">
                             Java
                         </div>
                     </div>
-                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex justify-between items-center bg-[#1b1d2e] hover:shadow-2xl h-48 w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
+
+                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex justify-between items-center bg-[#1b1d2e] hover:shadow-2xl h-24 w-24 md:h-48 md:w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
                         <img class="object-cover" src="./assets/img/logos/javascript.svg" alt="javascript">
 
                         <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 rounded p-2 bg-[#08090e] hidden group-hover:flex suse-bold-normal">
                             JavaScript
                         </div>
                     </div>
-                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex justify-between items-center bg-[#1b1d2e] hover:shadow-2xl h-48 w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
+
+                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex justify-between items-center bg-[#1b1d2e] hover:shadow-2xl h-24 w-24 md:h-48 md:w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
                         <img class="object-cover" src="./assets/img/logos/c.svg" alt="c">
 
                         <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 rounded p-2 bg-[#08090e] hidden group-hover:flex suse-bold-normal">
                             C
                         </div>
                     </div>
-                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex justify-between items-center bg-[#1b1d2e] hover:shadow-2xl h-48 w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
+
+                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex justify-between items-center bg-[#1b1d2e] hover:shadow-2xl h-24 w-24 md:h-48 md:w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
                         <img class="object-cover" src="./assets/img/logos/csharp.svg" alt="c#">
 
                         <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 rounded p-2 bg-[#08090e] hidden group-hover:flex suse-bold-normal">
@@ -140,26 +149,26 @@
                         <div class="w-4 bg-[#F38D2D] h-4 rounded-full"></div>
                     </div>
                     <p class="text-white suse-bold-normal text-xl">
-                        <span class="text-white suse-bold text-2xl">Frameworks y herramientas</span>
+                        <span class="text-white suse-bold text-xl md:text-2xl">Frameworks y herramientas</span>
                     </p>
                 </div>
 
-                <div class="flex flex-wrap gap-12">
-                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex justify-between items-center bg-[#1b1d2e] hover:shadow-2xl h-48 w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
+                <div class="flex flex-wrap gap-8 md:gap-12">
+                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex justify-between items-center bg-[#1b1d2e] hover:shadow-2xl h-24 w-24 md:h-48 md:w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
                         <img class="object-cover" src="./assets/img/logos/angular.svg" alt="angular">
 
                         <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 rounded p-2 bg-[#08090e] hidden group-hover:flex suse-bold-normal">
                             Angular
                         </div>
                     </div>
-                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex justify-between items-center bg-[#1b1d2e] hover:shadow-2xl h-48 w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
-                        <img class="object-cover h-40 w-40" src="./assets/img/logos/flutter.svg" alt="flutter">
+                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex justify-between items-center bg-[#1b1d2e] hover:shadow-2xl h-24 w-24 md:h-48 md:w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
+                        <img class="object-cover h-20 w-20 md:h-40 md:w-40" src="./assets/img/logos/flutter.svg" alt="flutter">
                         
                         <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 rounded p-2 bg-[#08090e] hidden group-hover:flex suse-bold-normal">
                             Flutter
                         </div>
                     </div>
-                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex justify-between items-center bg-[#1b1d2e] hover:shadow-2xl h-48 w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
+                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex justify-between items-center bg-[#1b1d2e] hover:shadow-2xl h-24 w-24 md:h-48 md:w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
                         <img class="object-cover" src="./assets/img/logos/spring.svg" alt="spring">
 
                         <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 rounded p-2 bg-[#08090e] hidden group-hover:flex suse-bold-normal">
@@ -167,7 +176,7 @@
                         </div>
                     </div>
                     
-                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex justify-between items-center bg-[#1b1d2e] hover:shadow-2xl h-48 w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
+                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex justify-between items-center bg-[#1b1d2e] hover:shadow-2xl h-24 w-24 md:h-48 md:w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
                         <img class="object-cover" src="./assets/img/logos/node.svg" alt="node">
 
                         <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 rounded p-2 bg-[#08090e] hidden group-hover:flex suse-bold-normal">
@@ -175,7 +184,7 @@
                         </div>
                     </div>
 
-                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex justify-between items-center bg-[#1b1d2e] hover:shadow-2xl h-48 w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
+                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex justify-between items-center bg-[#1b1d2e] hover:shadow-2xl h-24 w-24 md:h-48 md:w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
                         <img class="object-cover" src="./assets/img/logos/ionic.svg" alt="ionic">
 
                         <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 rounded p-2 bg-[#08090e] hidden group-hover:flex suse-bold-normal">
@@ -183,7 +192,7 @@
                         </div>
                     </div>
 
-                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex justify-between items-center bg-[#1b1d2e] hover:shadow-2xl h-48 w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
+                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex justify-between items-center bg-[#1b1d2e] hover:shadow-2xl h-24 w-24 md:h-48 md:w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
                         <img class="object-cover" src="./assets/img/logos/vue.svg" alt="vue">
 
                         <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 rounded p-2 bg-[#08090e] hidden group-hover:flex suse-bold-normal">
@@ -191,7 +200,7 @@
                         </div>
                     </div>
 
-                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex bg-[#1b1d2e] hover:shadow-2xl h-48 w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
+                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex bg-[#1b1d2e] hover:shadow-2xl h-24 w-24 md:h-48 md:w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
                         <img class="object-center" src="./assets/img/logos/git.svg" alt="git">
 
                         <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 rounded p-2 bg-[#08090e] hidden group-hover:flex suse-bold-normal">
@@ -199,7 +208,7 @@
                         </div>
                     </div>
 
-                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex bg-[#1b1d2e] hover:shadow-2xl h-48 w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
+                    <div data-aos="fade-right" data-aos-delay="100" class="relative group flex bg-[#1b1d2e] hover:shadow-2xl h-24 w-24 md:h-48 md:w-48 text-white p-4 rounded-lg hover:bg-[#08090e] ease-in-out duration-300 cursor-pointer">
                         <img class="object-center" src="./assets/img/logos/laravel.svg" alt="laravel">
 
                         <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 rounded p-2 bg-[#08090e] hidden group-hover:flex suse-bold-normal z-50">
@@ -211,9 +220,9 @@
             </div>
         </div>
 
-        <div class="w-full flex items-center bg-[#08090e] p-32">
+        <div class="bg-[#08090e] p-6 md:p-20 lg:p-32">
             <div class="flex flex-col gap-20">
-                <h1 class="relative group text-white suse-extreme text-6xl hover:underline max-w-max">
+                <h1 class="relative group text-white suse-extreme text-3xl md:text-6xl hover:underline max-w-max" data-aos="fade-left" data-aos-delay="100">
                     <a class="relative" href="/acerca-de-experiencia">
                         Experiencia laboral
                     </a>
@@ -221,7 +230,7 @@
                         Saber más
                     </div>
                 </h1>
-                <div class="flex gap-10 px-10" data-aos="fade-right" data-aos-delay="100">
+                <div class="flex gap-6 md:gap-10 md:px-10" data-aos="fade-right" data-aos-delay="100">
                     <div class="flex flex-col">
                         <h4 class="text-white suse-extreme text-xl mt-0 pt-0">
                             2024
@@ -243,7 +252,7 @@
                     </div>
                 </div>
 
-                <div class="flex gap-10 px-10" data-aos="fade-right" data-aos-delay="100">
+                <div class="flex gap-6 md:gap-10 md:px-10" data-aos="fade-right" data-aos-delay="100">
                     <div class="flex flex-col">
                         <h4 class="text-white suse-extreme text-xl mt-0 pt-0">
                             2023
@@ -264,7 +273,7 @@
                     </div>
                 </div>
 
-                <div class="flex gap-10 px-10" data-aos="fade-right" data-aos-delay="100">
+                <div class="flex gap-6 md:gap-10 md:px-10" data-aos="fade-right" data-aos-delay="100">
                     <div class="flex flex-col">
                         <h4 class="text-white suse-extreme text-xl mt-0 pt-0">
                             2022
@@ -286,7 +295,7 @@
                     </div>
                 </div>
 
-                <div class="flex gap-10 px-10" data-aos="fade-right" data-aos-delay="100">
+                <div class="flex gap-6 md:gap-10 md:px-10" data-aos="fade-right" data-aos-delay="100">
                     <div class="flex flex-col">
                         <h4 class="text-white suse-extreme text-xl mt-0 pt-0">
                             2021
@@ -310,49 +319,40 @@
             </div>
         </div>
 
-        <div class="w-full flex items-center bg-[#12131e] p-32">
-            <div class="w-full flex flex-col gap-20">
-                <h1 class="text-white suse-extreme text-6xl hover:underline" data-aos="fade-left" data-aos-delay="80">
+        <div class="bg-[#12131e] p-6 md:p-20 lg:p-32">
+            <div class="flex flex-col gap-12 md:gap-20">
+                <h1 class="text-white suse-extreme text-3xl md:text-6xl hover:underline" data-aos="fade-left" data-aos-delay="80">
                     <a href="#">
                         Contactame
                     </a>
                 </h1>
-                <div class="flex justify-center items-center gap-8">
-                    <div class="flex items-center gap-4 bg-[#1b1d2e] rounded-lg p-6 shadow-xl" data-aos="fade-right" data-aos-delay="200">
-                        <img class="h-10" src="./assets/img/icons/wsp.svg" alt="wsp">
-                        <h4 class="text-white suse-bold text-xl mt-0 pt-0">
+                <div class="w-full flex flex-col justify-center  items-center xl:flex-row gap-4 md:gap-8">
+                    <div class="flex items-center gap-4 bg-[#1b1d2e] rounded-lg p-4 md:p-6 shadow-xl">
+                        <img class="h-5 md:h-10" src="./assets/img/icons/wsp.svg" alt="wsp">
+                        <h4 class="text-white suse-bold text-lg md:text-xl mt-0 pt-0">
                             +569 4158 0087
                         </h4>
                     </div>
-                    <div class="w-4 bg-[#F38D2D] h-4 rounded-full" data-aos="fade-right" data-aos-delay="100"></div>
-                    <div class="flex items-center gap-4 bg-[#1b1d2e] rounded-lg p-6 shadow-xl" data-aos="fade-right" data-aos-delay="150">
-                        <img class="h-10" src="./assets/img/icons/mail.png" alt="mail">
-                        <h4 class="text-white suse-bold text-xl mt-0 pt-0">
+
+                    <div class="h-2 w-2 md:w-4 bg-[#F38D2D] md:h-4 rounded-full"></div>
+                    
+                    <div class="flex items-center gap-4 bg-[#1b1d2e] rounded-lg p-4 md:p-6 shadow-xl">
+                        <img class="h-5 md:h-10" src="./assets/img/icons/mail.png" alt="mail">
+                        <h4 class="text-white suse-bold text-lg md:text-xl mt-0 pt-0">
                             benjaminosoriovergara@gmail.com
                         </h4>
                     </div>
-                    <div class="w-4 bg-[#F38D2D] h-4 rounded-full" data-aos="fade-right" data-aos-delay="100"></div>
-                    <div class="flex items-center gap-4 bg-[#1b1d2e] rounded-lg p-6 shadow-xl" data-aos="fade-right" data-aos-delay="100">
-                        <img class="h-10" src="./assets/img/icons/location.png" alt="location">
-                        <h4 class="text-white suse-bold text-xl mt-0 pt-0">
+
+                    <div class="h-2 w-2 md:w-4 bg-[#F38D2D] md:h-4 rounded-full"></div>
+                    
+                    <div class="flex items-center gap-4 bg-[#1b1d2e] rounded-lg p-4 md:p-6 shadow-xl">
+                        <img class="h-5 md:h-10" src="./assets/img/icons/location.png" alt="location">
+                        <h4 class="text-white suse-bold text-lg md:text-xl mt-0 pt-0">
                             Ovalle, Coquimbo, Chile
                         </h4>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-
-    <div class="fixed bottom-4 right-4 flex flex-col items-center justify-center space-y-2 bg-transparent">
-        <div class="w-1 bg-[#F38D2D] h-40 mb-2 rounded-xl"></div>
-        <div class="flex flex-col space-y-2 items-center">
-            <a href="https://www.linkedin.com/in/benjam%C3%ADn-osorio-vergara-a30773200/" class="text-white font-bold py-2 px-4 rounded suse-bold">
-                <img class="object-center h-14 w-14" src="./assets/img/icons/linkedin.png" alt="linkedinicon">
-            </a>
-            <a href="https://github.com/froggos" class="text-white font-bold py-2 px-4 rounded suse-bold">
-                <img class="object-center h-11 w-11" src="./assets/img/icons/github.png" alt="githubicon">
-            </a>
         </div>
     </div>
 </body>
