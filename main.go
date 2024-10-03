@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"log"
 	"net/http"
 	"os"
@@ -27,21 +26,12 @@ func logger(next http.Handler) http.Handler {
 	})
 }
 
-func writeJSON(w http.ResponseWriter, status int, v any) error {
-	w.Header().Add("Content-Type", "application/json")
-	w.WriteHeader(status)
-	return json.NewEncoder(w).Encode(v)
-}
-
 func returnFuncHandleHTTP(t *structs.Templates) func(func(http.ResponseWriter, *http.Request, *structs.Templates) error) http.HandlerFunc {
 	return func(f func(http.ResponseWriter, *http.Request, *structs.Templates) error) http.HandlerFunc {
 		return func(w http.ResponseWriter, r *http.Request) {
+			w.Header().Set("Content-Type", "text/html")
 			if err := f(w, r, t); err != nil {
-				writeJSON(w, http.StatusBadRequest, &ErrorAPI{
-					Error:     err.Error(),
-					ErrorCode: "ERR_BAD_REQUEST",
-					StateCode: http.StatusBadRequest,
-				})
+				http.Error(w, "Ocurrió un error, por favor intenta nuevamente.", http.StatusBadRequest)
 			}
 		}
 	}
@@ -93,11 +83,13 @@ func main() {
 	// rutas
 	mux.HandleFunc("/", handleWithTemplates(routes.GetHome)).Methods("GET")
 	mux.HandleFunc("/acerca-de", handleWithTemplates(routes.GetAbout)).Methods("GET")
+	mux.HandleFunc("/contacto", handleWithTemplates(routes.GetContact)).Methods("GET")
 
 	// metodos
 	mux.HandleFunc("/acerca-de-habilidades", handleWithTemplates(routes.RedirectAboutAbilities)).Methods("GET")
 	mux.HandleFunc("/acerca-de-mi", handleWithTemplates(routes.RedirectAboutMe)).Methods("GET")
 	mux.HandleFunc("/acerca-de-experiencia", handleWithTemplates(routes.RedirectAboutExperience)).Methods("GET")
+	mux.HandleFunc("/enviar-email", handleWithTemplates(routes.SendEmail)).Methods("POST")
 
 	log.Printf("servidor levantado en el puerto: %d", 80)
 

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/assets/js/htmx.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <title>Contacto</title>
+</head>
+<body>
+    <script>
+        AOS.init();
+    </script>
+    <div class="bg-[#08090e] w-full">
+        {{template "navbar" .}}
+
+        <div class="flex flex-col gap-10 p-6 md:p-20 lg:p-32">
+            <h1 class="text-white suse-extreme text-3xl md:text-6xl max-w-max">
+                Contactame
+            </h1>
+
+            <div class="flex justify-between gap-10">
+                <div class="flex md:w-1/2 flex-col gap-8">
+                    <div class="flex space-x-5">
+                        <div class="flex flex-col justify-center">
+                            <div class="w-2 h-2 md:w-4 bg-[#F38D2D] md:h-4 rounded-full"></div>
+                        </div>
+                        <p class="text-white suse-bold-normal text-lg md:text-xl">
+                            <span>
+                                <strong class="suse-bolder text-[#F38D2D]">¿Quieres trabajar conmigo?</strong> Contactame mediante mis redes sociales o puedes enviarme un mensaje directo utilizando el formulario. 
+                            </span>
+                        </p>
+                    </div>
+
+                    <form id="contact-form" method="POST" action="/enviar-email" hx-post="/enviar-email" hx-target="#response" hx-swap="innerHTML">
+                        <div class="flex flex-col gap-4">
+                            <div class="flex flex-col">
+                                <label class="suse-bold text-lg text-white">Tu nombre</label>
+                                <input class="rounded text-lg p-2 bg-[#12131e] text-white suse-bold-normal border border-[#08090e] focus:border-[#F38D2D] focus-visible:outline-none" type="text" id="client-name" name="client-name" required>
+                            </div>
+
+                            <div class="flex flex-col">
+                                <label class="suse-bold text-lg text-white">Tu email</label>
+                                <input class="rounded text-lg p-2 bg-[#12131e] text-white suse-bold-normal border border-[#08090e] focus:border-[#F38D2D] focus-visible:outline-none" type="text" id="client-email" name="client-email" required>
+                            </div>
+                            
+                            <div class="flex flex-col">
+                                <label class="suse-bold text-lg text-white">Tu mensaje</label>
+                                <textarea class="rounded text-lg p-2 bg-[#12131e] text-white suse-bold-normal border border-[#08090e] focus:border-[#F38D2D] focus-visible:outline-none" name="client-message" id="client-message" rows="5" placeholder="Escribe tu mensaje aqui" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-1/3 bg-[#F38D2D] rounded text-[#08090e] suse-bolder text-lg p-2">Enviar</button>
+                        </div>
+                    </form>
+                    
+                    <div class="flex p-2">
+                        <p id="response" class="text-white suse-bold text-xl"></p>
+                    </div>
+                </div>
+                <div class="flex justify-center items-center md:w-1/2">
+                    <div class="flex gap-10">
+                        <a data-aos="fade-right" data-aos-delay="200" href="https://www.linkedin.com/in/benjam%C3%ADn-osorio-vergara-a30773200/" class="text-white font-bold rounded suse-bold">
+                            <div class="h-14 w-14 md:h-40 md:w-40">
+                                <img class="object-fill" src="./assets/img/icons/linkedin.png" alt="linkedinicon">
+                            </div>
+                        </a>
+
+                        <a data-aos="fade-right" data-aos-delay="250" href="https://github.com/froggos" class="text-white font-bold rounded suse-bold">
+                            <div class="h-14 w-14 md:h-40 md:w-40">
+                                <img class="object-center p-4" src="./assets/img/icons/github.png" alt="githubicon">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>            
+        </div>
+
+    </div>
+</body>
+</html>
