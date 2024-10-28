@@ -11,6 +11,8 @@ import (
 	"portafolio/structs"
 
 	"github.com/gorilla/mux"
+
+	_ "github.com/mattn/go-sqlite3"
 )
 
 type ErrorAPI struct {
@@ -64,6 +66,15 @@ func analyzeFile(directory string) error {
 }
 
 func main() {
+	err := structs.InitDb()
+
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer structs.GetDb().Close()
+
+	structs.CreateMessagesTable()
+
 	analyzeFile("./assets/img/logos")
 
 	mux := mux.NewRouter()

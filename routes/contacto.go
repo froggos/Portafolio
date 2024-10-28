@@ -4,7 +4,6 @@ import (
 	"errors"
 	"log"
 	"net/http"
-	"net/smtp"
 	"portafolio/structs"
 )
 
@@ -22,23 +21,25 @@ func GetContact(w http.ResponseWriter, r *http.Request, templateRenderer *struct
 func SendEmail(w http.ResponseWriter, r *http.Request, templateRenderer *structs.Templates) error {
 	r.ParseForm()
 
+	log.Println("Test1")
+
 	clientName := r.FormValue("client-name")
 	clientEmail := r.FormValue("client-email")
 	clientMessage := r.FormValue("client-message")
 
-	from := clientEmail
-	to := "benjaminosoriovergara@gmail.com"
-	subject := "Mensaje de contacto"
-	body := "Nombre: " + clientName + "\nEmail: " + clientEmail + "\nMensaje:\n" + clientMessage
+	message := structs.Message{
+		Name:    clientName,
+		Email:   clientEmail,
+		Message: clientMessage,
+	}
 
-	msg := "Desde: " + from + "\n" + "Para: " + to + "\n" + "Asunto: " + subject + "\n\n" + body
+	err := message.InsertMessage()
 
-	auth := smtp.PlainAuth("", to, "", "smtp.gmail.com")
-
-	err := smtp.SendMail("smtp.gmail.com:587", auth, from, []string{to}, []byte(msg))
+	log.Println("Test2")
 
 	if err != nil {
-		log.Println("entro al error")
+		log.Println("Entro al if del error")
+
 		log.Println(err)
 
 		w.Write([]byte("<p>Ocurrio un error al enviar el correo. Por favor intenta mas tarde.</p>"))
