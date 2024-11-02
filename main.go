@@ -95,12 +95,14 @@ func main() {
 	mux.HandleFunc("/", handleWithTemplates(routes.GetHome)).Methods("GET")
 	mux.HandleFunc("/acerca-de", handleWithTemplates(routes.GetAbout)).Methods("GET")
 	mux.HandleFunc("/contacto", handleWithTemplates(routes.GetContact)).Methods("GET")
+	mux.HandleFunc("/proyectos", handleWithTemplates(routes.GetProjects)).Methods("GET")
 
 	// metodos
 	mux.HandleFunc("/acerca-de-habilidades", handleWithTemplates(routes.RedirectAboutAbilities)).Methods("GET")
 	mux.HandleFunc("/acerca-de-mi", handleWithTemplates(routes.RedirectAboutMe)).Methods("GET")
 	mux.HandleFunc("/acerca-de-experiencia", handleWithTemplates(routes.RedirectAboutExperience)).Methods("GET")
 	mux.HandleFunc("/enviar-email", handleWithTemplates(routes.SendEmail)).Methods("POST")
+	mux.HandleFunc("/obtener-render", handleWithTemplates(routes.GetRender)).Methods("GET")
 
 	log.Printf("servidor levantado en el puerto: %d", 80)
 

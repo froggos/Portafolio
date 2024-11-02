@@ -4,8 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyectos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/assets/js/htmx.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
-    
+    <div class="bg-[#08090e] w-full">
+        {{template "navbar" .}}
+
+        <div class="flex gap-10">
+            <div class="w-40">
+                {{template "sidenav" .}}
+            </div>
+            <div id="main-frame" class="h-screen flex p-10 justify-center items-center2">
+                <p class="text-white suse-bold">Container proyectos</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
