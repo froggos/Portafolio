@@ -1,10 +1,32 @@
 {{define "sidenav"}}
-    <nav class="flex justify-between">
-        <ol class="flex flex-col font-medium flex p-4 gap-4">
-            <li class="hover:bg-[#12131e] py-1 px-3 rounded">
+    <nav class="flex md:justify-center">
+        <ol class="flex flex-col font-medium flex py-4">
+            <li class="gap-2 flex py-1 items-center rounded mb-2">
+                <div class="flex flex-col h-full items-center gap-4 pt-2">
+                    <div class="w-2 h-2 bg-[#F38D2D] mb-2 rounded"></div>
+                </div>
+                <span class="text-white suse-bold">Three JS</span>
+            </li>
+            <li class="border-l-4 border-[#0E0F18] hover:border-[#08090F] py-1 px-6 rounded">
                 <button hx-get="/obtener-render" hx-target="#main-frame" hx-swap="innerHTML" hx-boost="true">
-                    <span class="text-white suse-bold">Render 3D</span>
+                    <span class="text-white suse-normal">Tarjeta de presentacion</span>
                 </button>
+            </li>
+            <li class="gap-2 flex py-1 items-center rounded mb-2 mt-2">
+                <div class="flex flex-col h-full items-center gap-4 pt-2">
+                    <div class="w-2 h-2 bg-[#F38D2D] mb-2 rounded"></div>
+                </div>
+                <span class="text-white suse-bold">Proyectos externos</span>
+            </li>
+            <li class="block border-l-4 border-[#0E0F18] hover:border-[#08090F] py-1 px-6 rounded">
+                <a href="https://github.com/froggos/MP-DC" target="_blank">
+                    <span class="text-white suse-normal">Fotografia MP & DC</span>
+                </a>
+            </li>
+            <li class="block border-l-4 border-[#0E0F18] hover:border-[#08090F] py-1 px-6 rounded">
+                <a href="https://github.com/froggos/Lockey" target="_blank">
+                    <span class="text-white suse-normal">Lockey App</span>
+                </a>
             </li>
         </ol>
     </nav>
