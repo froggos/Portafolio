@@ -1,62 +1,62 @@
 package structs
 
-import (
-	"database/sql"
-	"log"
-)
+// import (
+// 	"database/sql"
+// 	"log"
+// )
 
-type Message struct {
-	Name    string
-	Email   string
-	Message string
-}
+// type Message struct {
+// 	Name    string
+// 	Email   string
+// 	Message string
+// }
 
-var dbInstance *sql.DB
+// var dbInstance *sql.DB
 
-func InitDb() error {
-	var err error
-	dbInstance, err = sql.Open("sqlite3", "./messages.db")
+// func InitDb() error {
+// 	var err error
+// 	dbInstance, err = sql.Open("sqlite3", "./messages.db")
 
-	if err != nil {
-		return err
-	}
+// 	if err != nil {
+// 		return err
+// 	}
 
-	return nil
-}
+// 	return nil
+// }
 
-func GetDb() *sql.DB {
-	return dbInstance
-}
+// func GetDb() *sql.DB {
+// 	return dbInstance
+// }
 
-func CreateMessagesTable() {
-	query := `
-		CREATE TABLE IF NOT EXISTS messages (
-			id INTEGER PRIMARY KEY AUTOINCREMENT,
-			name TEXT,
-			email TEXT,
-			message TEXT
-		);
-	`
+// func CreateMessagesTable() {
+// 	query := `
+// 		CREATE TABLE IF NOT EXISTS messages (
+// 			id INTEGER PRIMARY KEY AUTOINCREMENT,
+// 			name TEXT,
+// 			email TEXT,
+// 			message TEXT
+// 		);
+// 	`
 
-	_, err := dbInstance.Exec(query)
+// 	_, err := dbInstance.Exec(query)
 
-	if err != nil {
-		log.Fatalf("Error al crear la tabla: %v\n", err)
-	}
-}
+// 	if err != nil {
+// 		log.Fatalf("Error al crear la tabla: %v\n", err)
+// 	}
+// }
 
-func (m *Message) InsertMessage() error {
-	stmt, err := dbInstance.Prepare("INSERT INTO messages (name, email, message) VALUES (?, ?, ?)")
+// func (m *Message) InsertMessage() error {
+// 	stmt, err := dbInstance.Prepare("INSERT INTO messages (name, email, message) VALUES (?, ?, ?)")
 
-	if err != nil {
-		return err
-	}
+// 	if err != nil {
+// 		return err
+// 	}
 
-	_, err = stmt.Exec(m.Name, m.Email, m.Message)
+// 	_, err = stmt.Exec(m.Name, m.Email, m.Message)
 
-	if err != nil {
-		return err
-	}
+// 	if err != nil {
+// 		return err
+// 	}
 
-	return nil
-}
+// 	return nil
+// }
