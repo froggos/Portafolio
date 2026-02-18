@@ -66,14 +66,14 @@ func analyzeFile(directory string) error {
 }
 
 func main() {
-	err := structs.InitDb()
+	// err := structs.InitDb()
 
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer structs.GetDb().Close()
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+	// defer structs.GetDb().Close()
 
-	structs.CreateMessagesTable()
+	// structs.CreateMessagesTable()
 
 	analyzeFile("./assets/img/logos")
 
@@ -101,7 +101,7 @@ func main() {
 	mux.HandleFunc("/acerca-de-habilidades", handleWithTemplates(routes.RedirectAboutAbilities)).Methods("GET")
 	mux.HandleFunc("/acerca-de-mi", handleWithTemplates(routes.RedirectAboutMe)).Methods("GET")
 	mux.HandleFunc("/acerca-de-experiencia", handleWithTemplates(routes.RedirectAboutExperience)).Methods("GET")
-	mux.HandleFunc("/enviar-email", handleWithTemplates(routes.SendEmail)).Methods("POST")
+	// mux.HandleFunc("/enviar-email", handleWithTemplates(routes.SendEmail)).Methods("POST")
 	mux.HandleFunc("/obtener-render", handleWithTemplates(routes.GetRender)).Methods("GET")
 
 	log.Printf("servidor levantado en el puerto: %d", 80)
