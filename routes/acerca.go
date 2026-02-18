@@ -20,11 +20,6 @@ func GetAbout(w http.ResponseWriter, r *http.Request, templateRenderer *structs.
 			Description: "Segundo lenguaje de programación que más utilizo.",
 		},
 		{
-			Name:        "Dart",
-			ImageURL:    "./assets/img/logos/dart.svg",
-			Description: "Desarrollo de aplicaciones móviles y de escritorio.",
-		},
-		{
 			Name:        "PHP",
 			ImageURL:    "./assets/img/logos/php.svg",
 			Description: "Desarrollo de aplicaciones web monólito y API.",
@@ -38,16 +33,6 @@ func GetAbout(w http.ResponseWriter, r *http.Request, templateRenderer *structs.
 			Name:        "JavaScript",
 			ImageURL:    "./assets/img/logos/javascript.svg",
 			Description: "Desarrollo de aplicaciones web utilizando distintos frameworks.",
-		},
-		{
-			Name:        "C",
-			ImageURL:    "./assets/img/logos/c.svg",
-			Description: "Desarrollo de diversas aplicaciones, principalmente utilizado para modificar videojuegos.",
-		},
-		{
-			Name:        "C#",
-			ImageURL:    "./assets/img/logos/csharp.svg",
-			Description: "Desarrollo aplicaciones de escritorio y web. Desarrollo de videojuegos con Unity.",
 		},
 		{
 			Name:        "Angular",
@@ -100,11 +85,6 @@ func GetAbout(w http.ResponseWriter, r *http.Request, templateRenderer *structs.
 			Description: "Dominio moderado.",
 		},
 		{
-			Name:        "Vue",
-			ImageURL:    "./assets/img/logos/vue.svg",
-			Description: "Segundo framework de JavaScript que más me gusta.",
-		},
-		{
 			Name:        "Git",
 			ImageURL:    "./assets/img/logos/git.svg",
 			Description: "Herramienta para gestión de versiones de software que más utilizo.",
@@ -118,11 +98,6 @@ func GetAbout(w http.ResponseWriter, r *http.Request, templateRenderer *structs.
 			Name:        "Google Cloud",
 			ImageURL:    "./assets/img/logos/gcp.svg",
 			Description: "Utilizado para levantar servidores diversos.",
-		},
-		{
-			Name:        "Laravel",
-			ImageURL:    "./assets/img/logos/laravel.svg",
-			Description: "Framework que manejo pero no domino.",
 		},
 	}
 
